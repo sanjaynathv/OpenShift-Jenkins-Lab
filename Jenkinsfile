@@ -1,8 +1,8 @@
 def appName = "birthday-paradox"
 def replicas = "1"
-def devProject = "otatman-dev" // TODO: Your dev project name goes here
-def testProject = "otatman-test" // TODO: Your test project name goes here
-def prodProject = "otatman-prod" // TODO: Your prod project name goes here
+def devProject = "sanjaynathv-dev" // TODO: Your dev project name goes here
+def testProject = "sanjaynathv-test" // TODO: Your test project name goes here
+def prodProject = "sanjaynathv-prod" // TODO: Your prod project name goes here
 
 def skopeoToken
 def imageTag
@@ -39,7 +39,7 @@ pipeline {
                 script {
                     openshift.withCluster(){
                     echo "in script"
-                    openshift.withProject("otatman-dev") {
+                    openshift.withProject("sanjaynathv-dev") {
                         skopeoToken = openshift.raw("sa get-token jenkins").out.trim()
                     }
                     }
